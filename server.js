@@ -12,8 +12,13 @@ app.get("/", (req, res) => {
   res.send("Hello!");
 });
 
-app.post("/prompt", (req, res) => {
-  res.json({ message: "User registered successfully!", user: req.body });
+app.get("/ai-answer", (req, res) => {
+  res.json({ message: "AI answer" });
+});
+
+
+app.post("/send-prompt", (req, res) => {
+  res.json({ message: "User registered successfully!", prompt: req.body });
 });
 
 app.listen(port, () => {
